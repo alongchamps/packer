@@ -1,0 +1,35 @@
+#cloud-config
+autoinstall:
+    version: 1
+    early-commands:
+        # workaround to stop ssh for packer as it thinks it timed out
+        - sudo systemctl stop ssh
+    packages:
+        - perl
+        - cloud-init
+        - open-vm-tools
+        - openssh-server
+        - curl
+        - vim
+        - zip
+        - unzip
+        - util-linux-extra
+    network:
+        network:
+            version: 2
+            ethernets:
+                ens192:
+                    dhcp4: yes
+                    dhcp-identifier: mac
+    identity:
+        hostname: ubuntu2310
+        username: packer
+        password: "$6$rounds=4096$Z40UWAiWFwkT5nY1$RB/kf3WLh8adfnd1tWyg8Hn78rlkVsnfqWWKmua0Rg/zPA2G7olytBiHcyKktvurv4akjDMbbwC6hjkrTQVBX."
+    ssh:
+        install-server: yes
+        allow-pw: yes
+    storage:
+        layout:
+            name: direct
+    user-data:
+        disable_root: false
