@@ -9,10 +9,21 @@ autoinstall:
         - cloud-init
         - open-vm-tools
         - openssh-server
+        - net-tools
+        - network-manager
+        - open-iscsi
         - curl
         - vim
+        - ifupdown
         - zip
         - unzip
+        - gnupg2
+        - software-properties-common
+        - apt-transport-https
+        - ca-certificates
+        - lsb-release
+        - python3-pip
+        - jq
         - util-linux-extra
     network:
         network:
