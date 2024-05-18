@@ -14,8 +14,8 @@ sudo swapoff --all
 # enable VMware custom scripts (used during deployment)
 vmware-toolbox-cmd config set deployPkg enable-custom-scripts true
 
-echo '> cleaning up SSH thumbprints'
-sudo rm /etc/ssh/ssh_host*
+# echo '> cleaning up SSH thumbprints'
+# sudo rm /etc/ssh/ssh_host*
 # note: your deployment process needs to run `sudo dpkg-reconfigure openssh-server`
 # in order to regenerate the SSH keys. If we didn't clean these up and force regen
 # the keys, every VM that deploys from this template would have the same thumbprint.

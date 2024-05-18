@@ -244,6 +244,10 @@ build {
       scripts = var.shell_scripts
       expect_disconnect = true
     }
+    provisioner "file" {
+      source = "first_time_setup.sh"
+      destination = "/home/packer/first_time_setup.sh"
+    }
 }
 
 
